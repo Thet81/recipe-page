@@ -1,0 +1,154 @@
+/*styles.css*/
+
+/*simple reset*/
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+:root{
+	--body-color :  hsl(30, 54%, 90%);
+	--container-background : hsl(0, 0%, 100%);
+	--border-radius : 20px;
+	--border-radius-light:10px;
+	--font-weight-medium : 600;
+	--font-weight-light : 400;
+	--secondary-color:hsl(330, 100%, 98%);
+	--spacing-medium:15px;
+	--spacing-light:10px;
+	--Outfit:"Outfit";
+	--Young-Serif : "Young Serif";
+	--margin-light:10px;
+	--border-color :hsl(30, 18%, 87%);
+	--font-color: hsl(30, 10%, 34%);
+	--rose-800:hsl(332, 51%, 32%);
+	--spacing-large : 30px;
+	--brown-800:hsl(14, 45%, 36%);
+}
+/* generics */
+body {
+	background-color: var(--body-color);
+}
+h1,h2,h3,p{
+	margin: var(--spacing-light);
+}
+img {
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+	border-radius: var(--border-radius-light);
+}
+ul,ol {
+	padding: var(--spacing-light);
+	margin: 0;
+	margin-left: var(--spacing-light);
+}
+li {
+	margin: var(--spacing-light);
+	padding-left: var(--spacing-light);
+}
+li::marker{
+	color :var(--rose-800);
+}
+/* end generics*/
+
+.container {
+	margin: 40px auto;
+	width: 60%;
+	padding: 30px 25px ;
+	background-color: var(--container-background);
+	border-radius: var(--border-radius);
+	font-family: var(--Young-Serif);
+}
+.heading {
+	font-weight: var(--font-weight-light);
+	margin-top: var(--spacing-large);
+	margin-bottom: var(--spacing-medium);
+}
+.description {
+	font-size: 16px;
+	font-family: var(--Outfit);	
+	font-weight: var(--font-weight-light);
+	color:var(--font-color);
+	margin-bottom: 30px;
+}
+.preparation {
+	background-color:var(--secondary-color) ;
+	padding: var(--spacing-large);
+	font-family: var(--Outfit);
+	border-radius: var(--border-radius-light);
+}
+.preparation li {
+	color:var(--font-color);
+}
+
+.preparation h3 {
+	color:var(--rose-800);
+	margin: 0;
+}
+.ingredients , .instructions , .nutrition  {
+	font-weight: 400;
+	color: var(--font-color);
+	font-family: var(--Outfit);
+}
+
+.ingredients h2, .instructions h2, .nutrition h2 {
+	color : var(--brown-800);
+	margin-bottom: 0;
+	margin-top: 15px;
+	font-family: var(--Young-Serif);
+	font-weight: var(--font-weight-light);
+}
+.nutrition p {
+	padding-left: var(--spacing-light);
+	margin-left: 0;
+}
+.nutrition .calories {
+	padding-left: var(--spacing-large);
+}
+
+.nutrition-table div {
+	padding: var(--spacing-light);
+	border-bottom: 1px solid var(--border-color);
+	font-family: var(--Outfit);
+}
+.nutrition-table {
+	display: grid;
+	grid-template-columns: 300px 1fr;
+}
+
+.value {
+	color: var(--brown-800);
+}
+.attribution { 
+	font-size: 16px;
+	text-align: center;
+	padding:var(--spacing-medium);
+}
+.attribution a {
+ color: var(--brown-800);
+}
+@media screen and (max-width: 700px) {
+ .container{
+ 	padding: 0;
+ 	width: 100%;
+ 	margin: 0;
+ 	border-radius: 0;
+ }
+ .heading {
+ 	margin-top: var(--spacing-light);
+ }
+ .container > *:not(:first-child) {
+ 	padding: 20px;
+ }
+ img {
+ 	border-radius: 0;
+ 	width: 100%;
+ }
+ .nutrition-table{
+ 	grid-template-columns: repeat(2, 1fr);
+ }
+ .attribution { 
+	font-size: 11px;
+}
+}
